@@ -35,12 +35,11 @@ function closeNav() {
 
 
 
- $(document).ready(function(){
-    $('.collapsible popout').collapsible();
-  });
+ // $(document).ready(function(){
+ //    $('.collapsible popout').collapsible();
+ //  });
 
  
-
 
   
 

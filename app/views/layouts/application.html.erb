@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
 
-   
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
   <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
 
@@ -131,16 +131,60 @@
 
 
 
-  <div class="dropmenu" , id="dropmenu">
-      <span style="font-size:50px;cursor:pointer" onclick="openNav()">&#9776;</span>
+ 
 
-  </div>
 
+
+<div class="parent2">
+  <%= link_to user_settings_path do %>
+  <div class="test1"><i class="fa fa-user fa-2x"></i></div>
+  <% end -%>
+  <%= link_to user_location_path do %>
+  <div class="test2"><i class="fas fa-map-marker-alt"></i></div>
+  <% end -%>
+  <div class="test3"><i class="fa fa-code fa-2x"></i></div>
+  <div class="test4"><i class="fa fa-envelope-o fa-2x"></i></div>
+  <div class="mask2"><i class="fa fa-home fa-3x"></i></div>
+</div>
    
+
+   <script type="text/javascript">
+
+
+
+  var active1 = false;
+  var active2 = false;
+  var active3 = false;
+  var active4 = false;
+
+    $('.parent2').on('mousedown touchstart', function() {
+    
+    if (!active1) $(this).find('.test1').css({'background-color': 'gray', 'transform': 'translate(0px,125px)'});
+    else $(this).find('.test1').css({'background-color': 'dimGray', 'transform': 'none'}); 
+     if (!active2) $(this).find('.test2').css({'background-color': 'gray', 'transform': 'translate(60px,105px)'});
+    else $(this).find('.test2').css({'background-color': 'darkGray', 'transform': 'none'});
+      if (!active3) $(this).find('.test3').css({'background-color': 'gray', 'transform': 'translate(105px,60px)'});
+    else $(this).find('.test3').css({'background-color': 'silver', 'transform': 'none'});
+      if (!active4) $(this).find('.test4').css({'background-color': 'gray', 'transform': 'translate(125px,0px)'});
+    else $(this).find('.test4').css({'background-color': 'silver', 'transform': 'none'});
+    active1 = !active1;
+    active2 = !active2;
+    active3 = !active3;
+    active4 = !active4;
+      
+    });
+
+
+
+
+   </script>
 
    
 
     <% end -%>
+
+
+
  
 
 
@@ -149,46 +193,6 @@
 
 
 
-
-
-
-<div id="mySidenav" class="sidenav">
-
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <%= link_to ('<i class="material-icons">home</i>').html_safe ,  new_user_session_url, :class =>'side_buttons' %>
-    
-   
-   <%= link_to  ('<i class="material-icons">group</i>').html_safe, users_path ,:class =>'side_buttons'%> 
-    <%= link_to ('<i class="material-icons">settings</i>').html_safe, user_settings_path, method: :get , :class =>'side_buttons'%>
-    <%= link_to ('<i class="material-icons">power_settings_new</i>').html_safe, destroy_user_session_path, method: :get , :class =>'side_buttons'%>
-  
-
-
-</div>
-
- 
-
-
-
-
-<!--  <ul id="slide-out" class="side-nav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="images/office.jpg">
-      </div>
-      <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#!name"><span class="white-text name">John Doe</span></a>
-      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-  </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-       
- -->
 </header>
 
 
@@ -206,13 +210,6 @@
 
 </body>
 
-<script type="text/javascript">
-  var dropmenu = document.getElementById('dropmenu');
-  var sidenav = document.getElementById('mySidenav')
-
-  dropmenu.addEventListener('Click' , function (){
-      sidenav.style.width = "20vw"
-  })
 
 </script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
