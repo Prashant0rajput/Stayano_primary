@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prashant</title>
+
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+
+
+  
+</head>
+<body>
+
+
+<%=yield%> 
+<div class="container">
+
+
+<div class="backgroundImg">
+  <% if current_user.coverpic? %>
+    <%=image_tag current_user.coverpic %>
+    <% else %>
+    <%=image_tag("coverbackground.jpg")%>
+  <% end -%>    
+
+   
+  <div id="bar"></div>
+   <div id="user_pic">
+    <% if current_user.avatar? %> 
+    
+      <%=image_tag current_user.avatar %>
+   
+    <% elsif current_user.gender =="M" %>
+      
+    <%= image_tag("c9f1cdf473a8.png")  %>
+     
+
+    <% else %>
+
+    <%= image_tag("female_avatar.png")  %>
+
+     <% end -%>
+    
+  </div>
+
+  </div>
+  
+
+
+
+
+<main id="main">
+<section class="current_user_info">
+
+ 
+
+
+  
+ 
+
+  <div class="username">
+    <%=current_user.username %> 
+
+  </div>
+  <div class="semi_info">
+  <div class="gender">
+    <% if current_user.gender=='F' %>
+    <%= "Female" %>
+    <% else %>
+    <%= "Male" %>
+    <% end -%>
+    
+  </div>
+  <div class="age">
+    <% if current_user.age?%>
+    <%=current_user.age %>
+    <% else %>
+    <%= "?" %>
+    <% end -%>
+
+  </div>
+  </div>
+  <div class="email">
+     <%=current_user.email %> 
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+<section id="visiblepost">
+<div class="form">
+ 
+<%= form_for @post ,method: :post , url: 'post/create',id: 'myForm', html: { multipart: true }   do |f| %>
+
+<!-- remote: true -->
+ 
+   <div class="input-field col s12">
+          <!-- <textarea id="textarea1" class="materialize-textarea" name="post[content]"></textarea> -->
+          
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea id="icon_prefix2" class="materialize-textarea" name="post[content]" ></textarea>
+          <label for="icon_prefix2">Let's spread</label>
+        </div>
+  
+  
+
+
+
+    <div class="file-field input-field">
+        <div class="btn">
+        <span>Upload</span>
+        <input accept="image/png,image/gif,image/jpeg" id="file_field" type="file" name="post[image]">
+        <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+      </div>
+     
+    </div>
+
+  <div class=""><%= submit_tag 'POST',data: { disable_with: 'POSTING...' }, :class =>"post_submit_button" %>
+  </div>
+   
+  <%end%>
+</div>
+
+<br>
+
+
+
+
+  
+
+    <% @posts.each do |post| %>
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-image">
+          <%if post.image?%>
+          <img src="<%= post.image_url%>">
+          <%else%>
+          <img src="/uploads/post/image/503/Sketch002.jpg">
+          <%end%>
+          
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
+        </div>
+        <div class="card-content">
+           <%= render  "postAnswer"  , post: post %>
+        </div>
+        <span class="card-title"><%= post.created_at.in_time_zone("Chennai").to_formatted_s(:short)%></span>
+      </div>
+    </div>
+  </div>
+  <% end -%>
+           
+
+
+
+</section >
+
+
+<section id="nearby_users_list">
+    
+
+
+  <div id="nearby_head">
+    <h4>  People Nearby You  </h4>
+    </div>
+    <% @nearby_users.each do |user| %>
+    <div class="card horizontal">
+      
+      
+        <div class="card-content" style="height: 100px; width: 250px ;" >
+          <div class="card-image" >
+          
+
+            <% if user.avatar? %> 
+
+      <%=image_tag user.avatar  ,:size => "60x50"  %>
+    <% elsif user.gender =="M" %>
+      
+    <%= image_tag "c9f1cdf473a8.png"  ,:size => "60x50" %>
+    <% else %>
+    <%= image_tag "female_avatar.png"  ,:size => "60x50" %>
+    <% end -%>
+
+          </div>
+      <div>
+          <%= user.username %><%= user.age%> <%=user.gender %><br>
+          </div>
+      </div>
+        
+      </div>
+   
+  
+<% end -%>
+
+ 
+
+
+
+
+</section>
+
+
+
+
+
+
+</main>
+
+
+<section id="uploader_popup">
+
+<h3>Change your Avatar</h3>
+
+
+
+   <div id ="preview_image">
+
+    <% if current_user.avatar? %> 
+
+      <%=image_tag current_user.avatar ,:size => "300x300" , :id => 'preview_image_' %>
+   
+    <% elsif current_user.gender =="M" %>
+      
+    <%= image_tag "c9f1cdf473a8.png" ,:size => "300x300" ,:id => 'preview_image_' %>
+     
+
+    <% else %>
+
+    <%= image_tag "female_avatar.png",:size => "300x300" ,:id => 'preview_image_'  %>
+
+     <% end -%>
+    
+  </div>
+
+
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name),html: { method: :put, multipart: :true }) do |f| %>
+  <%= devise_error_messages! %>
+<br><br>
+  <div >
+    <%= f.label :avatar do %>
+
+      <%= f.file_field :avatar  , :class => 'file_input'%>
+      <%= f.hidden_field :avatar_cache %>
+    <% end %>
+
+    <%= f.label :coverpic%>
+    <%= f.file_field :coverpic%>
+  </div>
+  <div >
+    <%= f.submit "Update avatar" %>
+  </div>
+
+
+  <%end%>
+
+
+
+
+  </section>
+
+  
+
+
+
+
+
+  
+  <div class="preview">
+  </div>
+  
+  
+
+
+  
+</div>
+
+
+<!-- body ends -->
+</body>
+
+
+
+
+<style type="text/scss">
+    
+
+</style>
+<script type="text/javascript">
+  var submitForm = $('#post_form');
+  submitForm.submit(function(event){
+   
+    
+   var content = $('#content');
+   var image = $('#image');
+   var image_cache = $('#image_cache')
+   var data = {content: content.val() , image: image.val() , image_cache: image_cache.val()  } // this content: is being called ...at the controller
+   console.log(data);
+
+   $.ajax({
+     url: '/post/create',
+     method: 'POST',
+     data: data, // it is like passing params , this data will be read by params
+        
+      
+     success: function(result){
+       // var list = $(".posts")
+       // var new_element = document.createElement('div');
+       //  var next_element = list.firstElementChild;
+       // new_element.innerHTML = result.content; //taking out the content of data 
+       // list.insertBefore(new_element,next_element);
+       alert(data);
+       console.log(data);
+     },
+      
+      error: function(error){
+       alert(error);
+
+      }
+   });
+   event.preventDefault();
+  });
+
+
+
+
+</script>
+
+ <script type="text/javascript">
+
+
+ $('#textarea1').val('New Text');
+  $('#textarea1').trigger('autoresize');
+
+  var post_textarea = $('#icon_prefix2');
+
+  $('.post_submit_button').prop('disabled', true);
+     $(post_textarea).keyup(function() {
+        if($(post_textarea).val() != '') {
+           $('.post_submit_button').prop('disabled', false);
+        }
+     });
+    
+    var pro_pic = document.getElementById('user_pic');
+    var popup = document.getElementById('uploader_popup');
+    var blur = document.getElementById('main'); 
+
+    pro_pic.addEventListener("click", function(e){
+          blur.style.filter = 'blur(2px)';
+          popup.style.display = 'block';
+          popup.style.width = '500px' ;
+          popup.style.maxwidth = '750px' ;
+          popup.style.position = 'fixed';
+          popup.style.top = '50%';
+          popup.style.left = '50%';
+          popup.style.transform = 'translate(-50% , -50%)';
+          popup.style.textAlign = 'center';
+          popup.style.border = '0.5px solid #e8e8e8';
+          popup.style.background = '#fff';
+          popup.style.height = '500px';
+          popup.style.borderRadius = '10px';
+          popup.style.borderWidth = '5px';
+          popup.style.borderColor = 'rgb(49, 181, 194)';
+         
+          blur.style.opacity = '.5'
+
+
+         
+
+    });
+
+    $('.file_input').change(function(){
+    var curElement = document.getElementsByClassName('.preview_image');
+    console.log(curElement);
+    
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        curElement.attr('src', e.target.result);
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+});
+
+    $(document).mouseup(function (e) {
+    var popup = $("#uploader_popup");
+
+    if (!popup.is(e.target) // if the target of the click isn't the container...
+        && popup.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        popup.fadeOut();
+        blur.style.filter = 'none';
+        blur.style.background = 'none';
+          blur.style.opacity = '1';
+    }
+  });
+
+
+
+
+  
+
+  </script>
+
+
+   
+ <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+
+
+
+
+
+   
+

@@ -1,0 +1,33 @@
+
+
+
+<div id="rendered_posts">
+<%=post.content%>
+</div><br>
+
+<%= link_to 'Delete', url_for(controller: :post, action: :delete, id: post.id),method: :post , id: 'del' %>
+<!-- <button id="del">del</button> -->
+
+<%post.comments.each do |comment| %><br>
+<%=comment.content%><br>
+
+<%end%>
+
+<div class="comments">
+<%= form_tag 'comment/create' ,:class =>"comments" do%>
+<%= text_field_tag(:comment_content)  %>
+
+<%= hidden_field_tag "post_id",post.id %>
+<div class="card-action">
+<%= submit_tag "comment"%>
+<!-- <input type="submit" name="commit" value="comment" data-disable-with="comment"> -->
+</div>
+
+
+<% end -%>
+</div>
+
+
+
+
+<%# end -%>

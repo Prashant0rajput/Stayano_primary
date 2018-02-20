@@ -1,0 +1,58 @@
+<!-- <h2>Log in</h2> -->
+
+
+      <div class="parallax">
+
+<main id="box">
+<section>
+
+
+
+  
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="empty">
+    <i class="material-icons prefix">account_circle</i>
+    <%#=# f.label :email ,:class => 'email_label'%>
+    <%= f.email_field :email ,autocomplete: "on", :class => 'em-pass' ,placeholder: "Enter Email" %>
+  </div>
+
+  <div class="empty">
+    <%#=# f.label :password ,:class => 'password_label' %><br />
+    <%= f.password_field :password, autocomplete: "off" , :class => 'em-pass' ,placeholder: "Enter Password"%>
+  </div>
+  </section>
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in" ,:class => 'login'%>
+  </div>
+<% end %>
+<div class="render">
+New here?
+<%= render "devise/shared/links" %>
+<p>By signing up, you agree to the Terms of Service and Privacy Policy, </p>
+</div>
+</main>
+</div>
+
+<% if notice %>
+<script type="text/javascript">
+  noty({text: '<%= notice %>', type: 'alert'});
+</script>
+
+<% end %>
+
+
+<% if alert %>
+
+<script type="text/javascript">
+  noty({text: '<%= alert %>', type: 'error'});
+</script>
+<% end %>
+
+

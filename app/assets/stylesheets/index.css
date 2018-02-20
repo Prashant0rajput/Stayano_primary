@@ -1,0 +1,385 @@
+body section.current_user_info{
+	
+	
+	position: sticky;
+  position: -webkit-sticky;
+  top:0px;
+  margin-right: 5px;
+	height:300px;
+	width: 30%;
+	box-shadow: 0px 2px 4px 0px;
+	display: flex;
+	flex-direction: column;
+	/*justify-content: center;*/
+	 align-items: center;
+	 opacity: 1;
+	 overflow: scroll;
+}
+
+div.container div.backgroundImg div#user_pic img
+{	 
+	display: block;
+   bottom:190px;
+   left:50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	width: auto;
+  height: auto;
+  max-width: 200px;
+  min-height: 200px;
+  min-width: 200px;
+  max-height: 200px;
+	 border:10px solid white;
+	 border-radius: 50%;
+	 z-index: 0.9;
+	 position: relative;
+	
+   
+    
+}
+
+div#user_pic{
+	height: 3px;
+}
+
+#bar{
+    position: absolute;
+     z-index:1;
+}
+#bar:after {
+    content:'';
+    /*background: url('http://placehold.it/500x100') no-repeat center center;*/
+    position: absolute;
+    background-color: black;
+    bottom:290px;
+    top:0px;
+    left: 0px;
+    width:100%;
+    height:50px;
+    z-index:1;
+    opacity: 0.2; /* Here is your opacity */
+}
+body section.current_user_info div.username{
+	font-weight: bold;
+	margin-top: 70px;
+	position: relative;
+	color: #27aae1;
+	font-size: 30px;
+	
+
+}
+body section.current_user_info div.email{
+	font-weight: bold;
+	color : grey;
+	margin-top: 20px;
+	position: relative;
+	font-size: 10px;
+}
+
+
+body section.current_user_info div.semi_info{
+	display: inline-flex;
+}
+body section.current_user_info div.semi_info div.gender{
+	height: 50px;
+	 width: 50px;
+	 /*border-radius: 50%;*/
+	 background-color: pink;
+	 margin: 10px;
+	justify-content: center;
+    text-align:center;
+    display: flex;
+	flex-direction: column;
+	font-weight: bolder;
+	 align-items: center;
+
+}
+body section.current_user_info div.semi_info div.age{
+	height: 50px;
+	 width: 50px;
+	 font-weight: bolder;
+	 background-color: pink;
+	 margin: 10px;
+	 text-align:center;
+	 justify-content: center;
+	 display: flex;
+	flex-direction: column;
+	
+	 align-items: center;
+
+
+}
+
+.container{
+	margin-left: 10vw;
+	margin-right: 10vw;
+
+	width: 80vw;
+	
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+
+}
+main{
+	width: 100%;
+	
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;
+	position: relative;
+}
+
+
+#visiblepost{
+	width: 500px;
+	height: 100%;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+#nearby_users_list{
+	position: sticky;
+  position: -webkit-sticky;
+  top:0px;
+	/*display: flex;*/
+	flex-direction: column;
+	align-items: center;
+	border : 10px;
+	margin-left: 5px;
+	width: 30%;
+	height:85vh;
+	box-shadow: 0px 2px 4px 0px;
+	 overflow: scroll;
+}
+
+div.container div.backgroundImg img{
+ 	
+	
+	background: no-repeat;
+	height: 360px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size: cover;
+	position: relative;
+    border-radius: 0 0 4px 4px;
+    position: relative;
+    display: block;
+	
+}
+
+div.container div.backgroundImg{
+	
+}
+
+.form{
+	margin-top: 5px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	background: -webkit-linear-gradient(13deg , #49a089,white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(13deg , #49a089,white); 
+    background: -moz-linear-gradient(13deg , #49a089,white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(13deg , #49a089,white); /* Standard syntax */
+    background: white;
+
+
+}
+
+#content{
+	/*margin-left: 200px;
+	position: relative;*/
+	
+	/*width: 500px;
+	height: 100px;
+	*//*border-bottom : 10px;
+	border-width: 2px;*/
+	box-shadow: 0px 2px 4px 0px;
+	height: 100px;
+	resize: none;
+	 border: 5px solid #DCDCDC	;
+    background-color: #EEEEEE;
+	
+	padding: 10px;
+
+
+
+	outline-style: none;
+	
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	
+
+}
+
+
+#content:focus{
+	 border: 5px solid #DCDCDC	;
+    background-color: white;
+}
+
+#posts{
+	margin: 5px;	
+	/*margin-left: 200px;
+	position: relative;*/
+	width: 500px;
+	box-shadow: 0px 2px 1px 1px;
+	
+	
+	/*height: 100%;*/
+}
+/*.rendered_post{
+	padding: 10px;
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+
+}*/
+
+.comments{
+	
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+
+}
+/*#rendered_posts{
+	margin: 10px;
+	border : 20px ;
+	height: 200px ; 
+	box-shadow: 0px 2px 4px 0px black;
+}*/
+/*POST BUTTON*/
+#submitpost{
+	/*color:white;
+	margin-top: 1px;	
+	/*margin-left: 200px;
+	position: relative;*/
+	border : 1px;
+	border-radius: 50px;
+	box-shadow: 0px 2px 4px 0px black;
+	font-size: 15px;
+	width: 100px;
+	height: 30px;
+	font-weight: bold;
+
+	background-color: #f44271;
+
+}
+
+
+
+#submitpost:hover{
+	box-shadow: 0px 2px 15px 0px black;
+}
+
+
+.row .col.m6{
+	width: 100%;
+}
+.card .card-content{
+	display: inline-block;
+}
+
+.card.horizontal .card-stacked .card-content{
+	margin: 10px;
+}
+.card.horizontal .card-stacked{
+	width: 80%;
+	
+	height: 20%;
+
+}
+
+
+#uploader_popup{
+	display: none;
+border-width: 2px;
+border-style: solid;
+border-color: rgb(49, 181, 194);
+
+
+
+}
+
+#preview_image_{
+	width: 250px;
+	height: 250px;
+	border-width: 3px;
+	border-color: rgb(49, 181, 194);
+	border-style: dashed;
+	
+	border-radius: 50%;
+	background-size:contain; 
+	padding: 20px;
+	margin: 30px;
+
+}
+/*image uploader*/
+div#nearby_head{
+	position: sticky;
+  position: -webkit-sticky;
+
+}
+
+.btn .myBtn{
+	 background: -moz-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* ff3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,92,92,1)), color-stop(100%, rgba(0,128,128,1))); /* safari4+,chrome */
+background: -webkit-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* opera 11.10+ */
+background: -ms-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* ie10+ */
+background: linear-gradient(77deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* w3c */
+
+}
+
+div.btn{
+	position: relative;
+	background-color: #f56b70;
+background: -moz-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* ff3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,92,92,1)), color-stop(100%, rgba(0,128,128,1))); /* safari4+,chrome */
+background: -webkit-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* opera 11.10+ */
+background: -ms-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* ie10+ */
+background: linear-gradient(77deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* w3c */
+
+height: auto;
+}
+
+input.file-path.validate
+{
+	
+}
+
+.post_submit_button
+{
+	position: relative;
+	background: -moz-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* ff3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,92,92,1)), color-stop(100%, rgba(0,128,128,1))); /* safari4+,chrome */
+background: -webkit-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* opera 11.10+ */
+background: -ms-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* ie10+ */
+background: linear-gradient(77deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); /* w3c */
+min-height: 3rem;
+width: 100px;
+padding: 0px;
+margin-left: 10px;
+border: none;
+color: white;
+font-size: 15px;
+box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 0 2px 15px 0 rgba(0, 0, 0, 0);
+border-radius: 2px;
+
+
+}
+input#file_field
+{
+	height: 50px;
+
+}

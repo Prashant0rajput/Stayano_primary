@@ -1,0 +1,3 @@
+<% @posts.each do |post| %>
+$('#posts').html("<%= escape_javascript (render 'home/postAnswer', post: post) %>");
+<% end %>

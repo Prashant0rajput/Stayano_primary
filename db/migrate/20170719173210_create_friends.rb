@@ -1,0 +1,12 @@
+class CreateFriends < ActiveRecord::Migration
+  def change
+    create_table :friends do |t|
+      t.references :user, index: true, foreign_key: true
+      t.string :name
+      t.string :gender
+      t.integer :age
+
+      t.timestamps null: false
+    end
+  end
+end

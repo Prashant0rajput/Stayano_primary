@@ -1,0 +1,324 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+*{
+	margin: 0px;
+	padding: 0px;
+    font-family: 'Lato', sans-serif;
+
+
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+body{
+    background: #ebf5fb ;  /* fallback for old browsers */
+
+}
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+header{
+	width: 100%;
+    z-index:1;
+    opacity: 0.8;
+	/*text-decoration: none;*/
+	/*background-color: #0A5889;#32B9C6*/
+     background: red; /* For browsers that do not support gradients */
+   
+    /*background: -webkit-linear-gradient(to right ,#f44242, #32B9C6); 
+    background: -o-linear-gradient(to right ,#f44242, #32B9C6); 
+    background: -moz-linear-gradient(to right ,#f44242, #32B9C6); 
+    background: linear-gradient(to right ,#f44242, #32B9C6);*/
+
+     background: -webkit-linear-gradient(13deg ,black, #49a089,rgba(0,128,128,1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(13deg ,black, #49a089,rgba(0,128,128,1)); 
+    background: -moz-linear-gradient(13deg ,black, #49a089,rgba(0,128,128,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(13deg ,black, #49a089,rgba(0,128,128,1)); /* Standard syntax */
+    
+    /*background: -moz-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); 
+background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,92,92,1)), color-stop(100%, rgba(0,128,128,1))); 
+background: -webkit-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); 
+background: -o-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); 
+background: -ms-linear-gradient(13deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%);
+background: linear-gradient(77deg, rgba(255,92,92,1) 0%, rgba(0,128,128,1) 100%); 
+*/
+    /*background: -webkit-linear-gradient(#0A5889,transparent, #32B9C6); /* For Safari 5.1 to 6.0 */
+    /*background: -o-linear-gradient(#0A5889,transparent, #32B9C6); /* For Opera 11.1 to 12.0 */
+    /*background: -moz-linear-gradient(#0A5889,transparent, #32B9C6); /* For Firefox 3.6 to 15 */
+    /*background: linear-gradient(#0A5889,transparent, #32B9C6); /* Standard syntax */
+
+
+	
+
+    display: flex;
+    flex-direction: row;
+    top:0px;
+    position: flex;
+
+	justify-content: space-between;
+	/*justify-content: space-around;*/
+
+}
+div.logo img{
+	width : 60px;
+	opacity: 1;
+	 margin: 0 auto;
+	 margin-left: 15px;
+	  -webkit-filter: invert(100%);
+
+}
+/*.brand{
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    margin-top:20px;
+    color:white;
+    text-decoration: none;
+    color:white;
+}*/
+
+.brand_display{
+    width: 300px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
+
+#brand  
+{
+	 /*text-shadow: -15px -22px 7px;*/
+	font-size: 50px;
+	font-weight: bold;
+	position:relative;
+    /*margin-top:20px;*/
+	color: #fff;
+    text-decoration: none;
+   /*margin-left: 0px;*/
+	 /*margin: 0 auto;*/
+
+}
+
+#brand:hover{
+    background-color: transparent;
+
+}
+
+header .side_buttons{
+	 padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    text-align: center;
+     margin: 0 auto;
+    font-weight: bold;
+    font-size: 25px;
+    color:white;
+    display: block;
+    transition: 0.3s;
+    margin-top: 10px;
+
+}
+
+
+
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 65px;
+    /*left: 0;*/
+    right: 0;
+    /*background-color: #A3E4D7  ;*/
+      background: -webkit-linear-gradient(#0A5889,transparent, #32B9C6); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#0A5889,transparent, #32B9C6); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#0A5889,transparent, #32B9C6); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#0A5889,transparent, #32B9C6); /* Standard syntax */
+
+
+    overflow-x: hidden;
+    transition: .5s;
+    padding-top: 60px;
+}
+
+/*.sidenav.logout {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}*/
+
+.side_buttons:hover, .offcanvas .side_buttons:focus{
+    color: black;
+    background-color: #85C1E9  ;
+    transition:1s;
+}
+
+.sidenav .closebtn {
+    font-size: 50px;
+    position: sticky;
+
+
+    /*-webkit-filter: invert(100%);*/
+
+    top: 15px;
+    right: 25px;
+    font-size: 25px;
+    margin-left: 50px;
+}
+.sidenav .closebtn:hover{
+    background-color: transparent;
+}
+
+/*body main.layout {
+    top:75px;     
+}*/
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+.dropmenu{
+    display: flex;
+    align-items: center;
+
+    /*margin-left: auto;
+    top: 30px;
+    border: 5px;*/
+    /*margin-right: 20px;*/
+    position: relative;
+}
+
+.dropmenu:hover{
+    -webkit-filter: invert(100%);
+
+}
+
+header div.user_info {
+    
+    
+   /* background-color: white;*/
+   
+
+    border: 5px;
+   
+    position: relative;
+     width: 200px;
+     height: 100%;
+     
+    
+    display: flex;
+    flex-direction: row;
+
+
+   /*background: linear-gradient(to bottom right, red, yellow);*/
+}
+
+header div.user_info  p{
+    margin-top: 30px;
+    margin-right: 5px;
+    /*width: 100px;*/
+    font-weight: bold;
+    font-size: 15px;
+    color : white;
+    position: relative;
+    }
+
+
+.profilepic img{
+    /*background-image: url("profilepic.jpg");*/
+    background-color: #fff;
+    background-position: center;
+    opacity: 1;
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    right: auto;
+    border-width: 5px;
+    border-color: blue;
+    
+    border-radius: 50%;
+    background-size: cover;
+}
+
+
+.profilepic img:hover{
+    border-radius: 5%;
+    transition: .5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* header, main, footer {
+      padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }*/
